@@ -2,7 +2,7 @@
 
 // the index.php in the root always displays all available webpipe-urls
 
-$rooturl  = str_replace("//","/", "http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['REQUEST_URI'])."/" );
+$rooturl  = "http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['REQUEST_URI']);
 // trailing space to not lose POST-data because of apache 301 redirect
 $trail    = strstr( $_SERVER['HTTP_HOST'], "appspot" ) ? "" : "/";
 $webpipes = array();
