@@ -4,8 +4,7 @@ runtime: php
 api_version: 1
 
 handlers:
-- url: /stylesheets
-  static_dir: stylesheets
-
 - url: /.*
-  script: helloworld.php
+  script: index.php 
+- url: /json_print_r
+  script: json_print_r/index.php 
