@@ -2,7 +2,7 @@
 
 // the index.php in the root always displays all available webpipe-urls
 
-$rooturl  = "http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['REQUEST_URI'])."/";
+$rooturl  = str_replace("//","/", "http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['REQUEST_URI'])."/" );
 $webpipes = array();
 $files = scandir( dirname(__FILE__) );
 foreach ($files as $file) {
