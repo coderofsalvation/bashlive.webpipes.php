@@ -5,6 +5,8 @@ api_version: 1
 threadsafe: true
 
 handlers:
+- url: /debug
+  script: server.php 
 - url: /json_print_r
   script: json_print_r/index.php 
 - url: /.*
