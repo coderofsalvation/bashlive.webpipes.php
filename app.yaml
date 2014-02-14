@@ -9,5 +9,11 @@ handlers:
   script: server.php 
 - url: /json_print_r
   script: json_print_r/index.php 
+- url: /csv2json 
+  script: csv2json/index.php 
+- url: /xml2json 
+  script: xml2json/index.php 
+- url: /json2csv 
+  script: json2csv/index.php 
 - url: /.*
   script: index.php 
