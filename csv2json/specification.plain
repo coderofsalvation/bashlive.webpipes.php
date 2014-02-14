@@ -1,0 +1,10 @@
+Usage: echo <jsonstr> | json2csv [--ignorecolumns]
+
+converts a csv string into a json string 
+
+Options:
+     --ignorecolumns      skips first line
+     --delimiter <char>   defaults to ','
+
+Examples:
+  echo '[["foo","flap"],["bar","flop hop"]]' | json2csv | csv2json

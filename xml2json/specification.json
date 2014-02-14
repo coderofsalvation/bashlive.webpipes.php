@@ -1,0 +1,15 @@
+{
+    name: xml2json 
+    url: String
+    description: converts an xml string into a json string 
+    inputs: {
+        name: xmldata
+        type: String
+        description: string of xml 
+    }
+    outputs: {
+        name: json 
+        type: String
+        description: json string 
+    }
+}

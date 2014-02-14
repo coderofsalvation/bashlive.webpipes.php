@@ -1,0 +1,6 @@
+Usage: echo <xmlstr> | xml2csv 
+
+converts an xml string into a json string 
+
+Examples:
+  echo '<items><item foo="bar"><one>1</one></item></items>' | xml2json 

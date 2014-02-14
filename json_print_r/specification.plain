@@ -1,4 +1,4 @@
-Usage: echo <jsontext> | json_print_r [options]
+Usage: echo <jsonstr> | json_print_r [options]
 
 prettyprints a json string using the php print_r() function 
 

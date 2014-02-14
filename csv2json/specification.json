@@ -1,0 +1,15 @@
+{
+    name: csv2json 
+    url: String
+    description: converts a csv string into a json string
+    inputs: 
+        name: csv 
+        type: String
+        description: csv string 
+    }
+    outputs: {
+        name: text
+        type: String
+        description: json string 
+    }
+}
