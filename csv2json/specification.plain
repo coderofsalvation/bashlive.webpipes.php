@@ -1,9 +1,8 @@
-Usage: echo <jsonstr> | json2csv [--ignorecolumns]
+Usage: echo <csvstring> | csv2json 
 
 converts a csv string into a json string 
 
 Options:
-     --ignorecolumns      skips first line
      --delimiter <char>   defaults to ','
 
 Examples:
