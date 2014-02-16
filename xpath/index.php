@@ -3,18 +3,25 @@
 include_once("../webpipe.php");
 die(servePost());
 
-function getXpath( $input, $path ){
-  $xml = new SimpleXMLElement( $input );
-  $result = $xml->xpath($path);
+function getXpath( $input, $path, $html = false ){
+  $dom = new DOMDocument();
+  if( !$html ) $dom->loadXML($input);
+  else $dom->loadHTML($input);
+  $xpath = new DOMXpath($dom);
+  $result = $xpath->query($path);
   $str = "";
-  foreach( $result as $node ) 
-    $str .= (string)$node."\n";
+  foreach( $result as $node ){
+    $line = trim( preg_replace( '/\s+/', ' ', $node->nodeValue) );
+    $line = str_replace(array("\n","\t","\r"), "", $line );
+    if( strlen($line) ) $str .= $line."\n";
+  }
   return $str;
 }
 
-function dumpXpath( $input, $values = false ){
+function dumpXpath( $input, $values = false, $html = false ){
   $dom = new DOMDocument();
-  $dom->loadXML( $input );
+  if( !$html ) $dom->loadXML($input);
+  else $dom->loadHTML($input);
   $str = ""; $xpathsize = 0;
   // Print XPath for each element
   foreach ($dom->getElementsByTagName('*') as $node) 
@@ -24,10 +31,11 @@ function dumpXpath( $input, $values = false ){
 }
 
 function process( $input ){
-  if( isset($_GET['dumppath']) ) return dumpXpath( $input );
-  if( isset($_GET['dumppathvalues']) ) return dumpXpath( $input, true );
+
+  if( isset($_GET['dumppath']) ) return dumpXpath( $input, false, isset($_GET['html'])  );
+  if( isset($_GET['dumppathvalues']) ) return dumpXpath( $input, true, isset($_GET['html']) );
   if( !isset($_GET['1']) ) return serveOptions();
-  return getXpath( $input, $_GET['1'] );
+  return getXpath( $input, $_GET['1'], isset($_GET['html'])  );
 }
 
 ?>
