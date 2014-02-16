@@ -11,11 +11,16 @@ function getXpath( $input, $path, $html = false ){
   $result = $xpath->query($path);
   $str = "";
   foreach( $result as $node ){
-    $line = trim( preg_replace( '/\s+/', ' ', $node->nodeValue) );
-    $line = str_replace(array("\n","\t","\r"), "", $line );
+    $line = sanitizeString( $node->nodeValue );
     if( strlen($line) ) $str .= $line."\n";
   }
   return $str;
+}
+
+function sanitizeString( $str ){
+  $line = trim( preg_replace( '/\s+/', ' ', $str ) );
+  $line = str_replace(array("\n","\t","\r"), "", $line );
+  return $line;
 }
 
 function dumpXpath( $input, $values = false, $html = false ){
@@ -25,7 +30,7 @@ function dumpXpath( $input, $values = false, $html = false ){
   $str = ""; $xpathsize = 0;
   // Print XPath for each element
   foreach ($dom->getElementsByTagName('*') as $node) 
-    $str .= $values ? sprintf("%s ::: %s\n",$node->getNodePath(),$node->nodeValue)
+    $str .= $values ? sprintf("%s ::: %s\n",$node->getNodePath(),sanitizeString($node->nodeValue))
                     : sprintf("%s\n",$node->getNodePath());
   return $str;
 }
