@@ -15,5 +15,11 @@ handlers:
   script: xml2json/index.php 
 - url: /json2csv 
   script: json2csv/index.php 
+- url: /jsonpath 
+  script: jsonpath/index.php 
+- url: /xpath 
+  script: xpath/index.php 
+- url: /markdown 
+  script: markdown/index.php 
 - url: /.*
   script: index.php 
