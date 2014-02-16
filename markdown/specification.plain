@@ -1,0 +1,6 @@
+Usage: echo <str> | markdown 
+
+Turns markdown into html
+
+Examples:
+  printf "Foo\n===\n\n### paragraph\n\n* one\n* two\n" | markdown 

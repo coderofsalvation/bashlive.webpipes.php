@@ -2,9 +2,5 @@ Usage: echo <jsonstr> | json_print_r [options]
 
 prettyprints a json string using the php print_r() function 
 
-Options:
-     --foo=n             number of foos
-
 Examples:
   echo '{"foo":"bar"}' | json_print_r 
-  echo '{"foo":"bar"}' | json_print_r --foo=2

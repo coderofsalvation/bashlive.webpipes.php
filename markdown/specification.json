@@ -1,0 +1,15 @@
+{
+    name: markdown
+    url: String
+    description: turns markdown into html 
+    inputs: {
+        name: markdown
+        type: String
+        description: markdown text
+    }
+    outputs: {
+        name: html
+        type: String
+        description: html text 
+    }
+}

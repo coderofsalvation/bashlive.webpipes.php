@@ -1,0 +1,14 @@
+Usage: echo <xmltext> | xpath <xpath> [options]
+
+prints values from xml based on given xpath 
+
+Options:
+     --dumppath          dump xpath instead of values 
+     --dumppathvalue     dump xpath with values 
+     --manual            show examples/syntax
+
+Examples:
+  echo '<xml><foo><bar>123</bar></foo></xml>' | xpath //foo/bar
+  echo '<xml><foo><bar>123</bar></foo></xml>' | xpath //* --dumppath
+  echo '<xml><foo><bar>123</bar></foo></xml>' | xpath //* --dumppathvalues
+

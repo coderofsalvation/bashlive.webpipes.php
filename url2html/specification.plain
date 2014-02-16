@@ -1,0 +1,10 @@
+Usage: echo <str> | url2html [options]
+
+decorates links found in text with html anchortags
+
+Options:
+     --target _blank     optional target (usually '_blank')
+
+Examples:
+  echo 'for more info see http://foo.com' | url2html 
+  echo 'for more info see http://foo.com' | url2html --target=_blank

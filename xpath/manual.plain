@@ -1,0 +1,36 @@
+
+  XPath  Description
+  -----  --------------------------------------------------------
+  /      the root object/element
+  .      the current object/element
+  /      child operator
+  ..     parent operator
+  //     recursive descent. JSONPath borrows this syntax from E4X.
+  *      wildcard. All objects/elements regardless their names.
+  @      attribute access. JSON structures don't have attributes.
+  []     subscript operator. XPath uses it to iterate over element 
+         collections and for predicates. In Javascript and JSON it 
+         is the native array operator.
+  |      Union operator in XPath results in a combination of node 
+         sets. JSONPath allows alternate names or array indices as a set.
+  n/a    array slice operator borrowed from ES4.
+  []     applies a filter (script) expression.
+  n/a    script expression, using the underlying script engine.
+  ()     grouping in Xpath
+
+Examples:
+
+  XPath                 Result
+  -----                 ------
+  //*                   all Elements in XML document. All members of JSON structure.
+  /store/book/author    the authors of all books in the store
+  //author              all authors
+  /store/*              all things in store, which are some books and a red bicycle.
+  /store//price         the price of everything in the store.
+  //book[3]             the third book
+  //book[last()]       
+                        the last book in order.
+  //book[position()<3] 
+                        the first two books
+  //book[isbn]          filter all books with isbn number
+  //book[price<10]      filter all books cheapier than 10

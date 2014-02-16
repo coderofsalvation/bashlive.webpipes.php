@@ -1,0 +1,14 @@
+Usage: echo <jsontext> | jsonpath <path> [options]
+
+prints values from json based on json path 
+jsonpath is like xpath, for more info see http://goessner.net/articles/JsonPath
+
+Options:
+     --dumppath          dump path instead of values 
+     --manual            show examples/syntax
+
+Examples:
+  echo '{"foo":"bar","one":"1"}' | jsonpath \$..*
+  echo '{"foo":"bar","one":"1"}' | jsonpath \$..* --dumppath 
+  echo '{"foo":"bar","one":"1"}' | jsonpath \$['foo'] 
+

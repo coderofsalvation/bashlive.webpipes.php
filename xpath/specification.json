@@ -1,0 +1,15 @@
+{
+    name: xpath 
+    url: String
+    description: applies xpath to xml string 
+    inputs: {
+        name: xml
+        type: String
+        description: string of xmldata
+    }
+    outputs: {
+        name: text
+        type: String
+        description: result of xpath 
+    }
+}
