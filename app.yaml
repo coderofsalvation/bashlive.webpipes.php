@@ -21,5 +21,7 @@ handlers:
   script: xpath/index.php 
 - url: /markdown 
   script: markdown/index.php 
+- url: /url2html 
+  script: url2html/index.php 
 - url: /.*
   script: index.php 
