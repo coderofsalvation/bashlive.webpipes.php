@@ -1,7 +1,7 @@
 {
     name: url2html 
     url: String
-    description: turns links found in text with cli" ></a>prettyprints a json string using the php print_r() function 
+    description: turns links found in text with cli
     inputs: {
         name: text 
         type: String

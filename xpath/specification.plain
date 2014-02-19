@@ -6,6 +6,7 @@ Options:
      --dumppath          dump xpath instead of values 
      --dumppathvalue     dump xpath with values 
      --manual            show examples/syntax
+     --html              input is html instead of xml
 
 Examples:
   echo '<xml><foo><bar>123</bar></foo></xml>' | xpath //foo/bar
