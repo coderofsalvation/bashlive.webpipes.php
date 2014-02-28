@@ -23,5 +23,7 @@ handlers:
   script: markdown/index.php 
 - url: /url2html 
   script: url2html/index.php 
+- url: /striphtml 
+  script: striphtml/index.php 
 - url: /.*
   script: index.php 
