@@ -1,0 +1,15 @@
+{
+    name: striphtml 
+    url: String
+    description: strips all htmltags from text
+    inputs: {
+        name: text 
+        type: String
+        description: html string 
+    }
+    outputs: {
+        name: text
+        type: String
+        description: text without  html tags 
+    }
+}

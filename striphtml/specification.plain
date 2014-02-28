@@ -1,0 +1,6 @@
+Usage: echo <str> | striphtml 
+
+removes tags from html, converts it to human readable text 
+
+Examples:
+  echo '<b>foo</b>' | striphtml 

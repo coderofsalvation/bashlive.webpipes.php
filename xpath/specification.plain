@@ -1,6 +1,6 @@
 Usage: echo <xmltext> | xpath <xpath> [options]
 
-prints values from xml based on given xpath 
+prints values from xml based on given xpath (can be commaseperated)
 
 Options:
      --dumppath          dump xpath instead of values 
