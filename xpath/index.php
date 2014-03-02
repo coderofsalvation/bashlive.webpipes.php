@@ -3,38 +3,6 @@
 include_once("../webpipe.php");
 die(servePost());
 
-// function isFullRow( $arr, $columns, $index ){
-//   $ok = array();
-//   for( $i=0; $i < $columns; ; ){
-// 
-//   }
-// 
-// }
-
-// function getXpaths( $input, $paths, $html = false, $striphtml = true ){
-//   $output = ""; $i = 0;
-//   $results = array();
-//   $rows    = array();
-//   $pathsArr = explode(",", $paths );
-//   foreach( $pathsArr as $path )
-//     $results[] = explode("\n",getXpath( $input, $path, $html, $striphtml ));
-//   if( count($results) ){
-//     for( $i = 0; $i < results[0] ; $i++ ){
-//       $rows[$i] = array();
-//       $rows[$output] .= $results[0]
-//       for( $j = 0; $j < count($pathsArr); $j++ ){
-//         
-//       }
-//       $output .= "\n";
-//     }
-//   }
-//   $results = array_merge_recursive( $results
-//   while( isFullRow( $results, count($paths), $i ) {
-//   }isset($results[$i]) &&   ){
-// 
-//   }
-// }
-
 function getXpath( $input, $path, $html = false, $striphtml = true ){
   $dom = new DOMDocument();
   if( !$html ) $dom->loadXML($input);
@@ -43,7 +11,7 @@ function getXpath( $input, $path, $html = false, $striphtml = true ){
   $result = $xpath->query($path);
   $str = "";
   foreach( $result as $node ){
-    $line = sanitizeString( $striphtml ? $node->nodeValue : $node->ownerDocument->saveHTML($node) );
+    $line = sanitizeString( $striphtml ? $node->nodeValue : $dom->saveXML($node) );
     if( strlen($line) ) $str .= $line."\n";
   }
   return $str;
