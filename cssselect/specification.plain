@@ -1,0 +1,10 @@
+Usage: echo <html> | cssselect <css selector> [options] 
+
+extracts components from html using css selector or converts it to xpath
+
+Options:
+     --output xpath         converts css selector into xpath 
+
+Examples:
+  echo '<html><foo class="flop">12</foo></html>' | cssselect "foo.flop" | json_print_r
+  cssselect "div div.foo" --output xpath 
