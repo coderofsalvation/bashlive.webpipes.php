@@ -1,0 +1,15 @@
+{
+    name: url2html 
+    url: String
+    description: turns links found in text with cli
+    inputs: {
+        name: text 
+        type: String
+        description: string of jsondata
+    }
+    outputs: {
+        name: text
+        type: String
+        description: text with html anchortags 
+    }
+}

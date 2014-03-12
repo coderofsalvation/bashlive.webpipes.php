@@ -1,5 +1,5 @@
 application: neon-semiotics-490
-version: 1
+version: v1-0-1-baconsandwhich
 runtime: php
 api_version: 1
 threadsafe: true
@@ -23,5 +23,9 @@ handlers:
   script: markdown/index.php 
 - url: /url2html 
   script: url2html/index.php 
+- url: /striphtml 
+  script: striphtml/index.php 
+- url: /cssselect 
+  script: cssselect/index.php 
 - url: /.*
   script: index.php 
