@@ -25,5 +25,7 @@ handlers:
   script: url2html/index.php 
 - url: /striphtml 
   script: striphtml/index.php 
+- url: /cssselect 
+  script: cssselect/index.php 
 - url: /.*
   script: index.php 
