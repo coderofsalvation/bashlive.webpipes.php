@@ -1,0 +1,6 @@
+Usage: echo <jsonstr> | jsonindent 
+
+prettyprints a json string 
+
+Examples:
+  echo '{"foo":"bar"}' | jsondindent
